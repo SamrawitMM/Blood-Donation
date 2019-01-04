@@ -5,6 +5,8 @@ var bodyParser = require('body-parser');
 
 var user = require('./routes/user');
 var userType = require('./routes/specificUser');
+var reqst = require('./routes/request')
+var bld = require('./routes/blood')
 
 
 var app = express();
@@ -23,6 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', user);
 app.use('/api', userType);
+app.use('/request', reqst);
+app.use('/blood', bld);
 app.listen(3000, () => {
     console.log('Starting on port 3000')
 })

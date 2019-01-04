@@ -12,7 +12,7 @@ const jwt = require('jsonwebtoken')
 
 
 router.post('/admin', (req, res) => {
-    var body = _.pick(req.body, ['email', 'password','firstName', 'lastName', 'phoneNo', 'age', 'sex','address']);
+    var body = _.pick(req.body, ['email', 'password','firstName', 'lastName', 'phoneNo', 'age', 'sex','address', 'role']);
     var user = new User(body);
 
     user.save().then((user) => {
@@ -38,4 +38,5 @@ router.post('/admin/login', (req, res) => {
     
     
 })
+
 module.exports = router;

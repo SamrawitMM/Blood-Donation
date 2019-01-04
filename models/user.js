@@ -57,6 +57,10 @@ var AdminSchema = new mongoose.Schema({
         required: true,
         minlength:6
     },
+    role:{
+        type:String,
+        required:true
+    },
     tokens:[{
         access: {
             type:String,
@@ -74,7 +78,7 @@ AdminSchema.methods.toJSON = function(){
     var user = this;
     var userObject = user.toObject(); 
 
-    return _.pick(userObject, ['_id', 'email', 'firstName', 'lastName', 'phoneNo', 'age', 'sex','address']);
+    return _.pick(userObject, ['_id', 'email', 'firstName', 'lastName', 'phoneNo', 'age', 'sex','address', 'role']);
 }
 AdminSchema.methods.generateAuthToken = function(){
     var user = this; 
