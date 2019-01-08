@@ -1,6 +1,4 @@
 tests/
-package-lock.json
-package.json
 models/blood.js
 models/request.js
 routes/blood.js
